@@ -17,6 +17,25 @@ Architecture
 
 <pre>
 
+├── .gitignore              - remove hidden .terraform folder with large provider modules.
+├── Jenkinsfile             - Jenkins branch pipeline for deployment.
+├── LICENCE                 
+├── MAINTAINERS             
+├── README.md               - This file
+├── architecture.png        - Application description. Credit for the application: 
+                              https://github.com/eesprit/example-voting-app
+├── db-deployment.yaml      - Kubernetes Kompose file converted from Docker-Compose Format
+                              This is a deployment description file.
+├── deployment.yaml         - K8S KOMPOSE - MAIN deployment file
+                              Support for Rolling deployment via:
+                                  replicas: 2
+                                  strategy:
+                                  type: RollingUpdate
+                                  rollingUpdate:
+                                    maxSurge: 1
+                                    maxUnavailable: 25%
+├── .gitignore              - remove hidden .terraform folder with large provider modules.
+├── .gitignore              - remove hidden .terraform folder with large provider modules.
 
 result/
 ├── css/
