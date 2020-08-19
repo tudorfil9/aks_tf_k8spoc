@@ -14,8 +14,7 @@ Architecture
 
 
 <h1>Project Structure</h1>
-<h1>Semantically marked-up ASCII art tree structure</h1>
-<h2>ASCII art</h2>
+
 <pre>
 
 
