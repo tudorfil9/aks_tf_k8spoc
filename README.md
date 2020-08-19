@@ -3,6 +3,7 @@ The app will be running at [http://localhost:5000](http://localhost:5000), and t
 
 Architecture
 -----
+Application is deployed via AKS control from Kompose CLI. Wrapping via BASH can be done for Rolling deployments to be triggered via Jenkins Pipelines.
 
 ![Architecture diagram](architecture.png)
 
@@ -27,6 +28,7 @@ Architecture
 ├── db-deployment.yaml      - Kubernetes Kompose file converted from Docker-Compose Format
                               This is a deployment description file.
 ├── deployment.yaml         - K8S KOMPOSE - MAIN deployment file
+
                               Support for Rolling deployment via:
                                   replicas: 2
                                   strategy:
@@ -34,8 +36,13 @@ Architecture
                                   rollingUpdate:
                                     maxSurge: 1
                                     maxUnavailable: 25%
-├── .gitignore              - remove hidden .terraform folder with large provider modules.
-├── .gitignore              - remove hidden .terraform folder with large provider modules.
+                              Rolling deployments can be achieved by Jenkins pipeline and cli control for kubernetes loadBalancer resource.
+
+├── docker-compose.yml      - Original docker-compose.yml which has been converted to k8s kompose
+├── redis-deployment.yml    - Redis deployment resource.
+├── redis-service.yml       - Redis Service Definition for Kompose
+etc.        
+
 
 result/
 ├── css/
